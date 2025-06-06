@@ -2,64 +2,124 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <title>Galerie Masă Sticlă</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <title>Galerie Mese Sticlă</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f4f4f4;
+      margin: 0;
       padding: 20px;
-      text-align: center;
     }
     h1 {
-      font-size: 32px;
+      text-align: center;
     }
-    .price {
-      font-size: 24px;
-      color: #2e7d32;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-    .contact-btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #007bff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-bottom: 30px;
-      transition: 0.3s ease;
-    }
-    .contact-btn:hover {
-      background-color: #0056b3;
-    }
-    .gallery {
+    .galerie {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
     }
-    .gallery img {
+    .galerie a {
+      position: relative;
+      display: block;
+    }
+    .galerie img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      transition: 0.3s ease-in-out;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
     }
-    .gallery img:hover {
-      transform: scale(1.05);
+    .galerie img:hover {
+      transform: scale(1.03);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      animation: zoom 0.3s ease;
+    }
+    @keyframes zoom {
+      from {transform:scale(0.7)}
+      to {transform:scale(1)}
+    }
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 45px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-
-  <h1>Masă din Sticlă – Model Modern</h1>
-  <div class="price">Preț: 1500 lei</div>
-  <a class="contact-btn" href="https://wa.me/40712345678" target="_blank">Contactează pentru comandă</a>
-
-  <div class="gallery">
-    <!-- aici vin toate imaginile deja incluse anterior -->
-    <!-- le-am păstrat pe toate, nu le repet aici pentru claritate -->
+  <h1>Galerie Mese din Sticlă - 1500 lei</h1>
+  <div class="galerie">
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/5Q8n7K3W/masa-sticla1-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/ZCZcYcH0/masa-sticla10-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/677Vb1Wb/masa-sticla11-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/gnDKxZts/masa-sticla12-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/cvLBwLVS/masa-sticla13-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/G8GFd8sk/masa-sticla14-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/RJmcFSc2/masa-sticla15-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/TyZVzqhd/masa-sticla16-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/BPC2Prpb/masa-sticla17-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/Sjb58cVb/masa-sticla18-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/Jt3FQtdD/masa-sticla19-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/Mc45WJ38/masa-sticla2-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/7fxWtDpB/masa-sticla20-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/MnHrx5ZV/masa-sticla21-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/bs3FKWPq/masa-sticla22-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/mcFX1rHr/masa-sticla23-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/hzWCLqL1/masa-sticla24-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/XBnQPcDZ/masa-sticla25-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/mzYmV6Vf/masa-sticla26-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/dD9WypLG/masa-sticla27-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/56NsqgCT/masa-sticla28-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/dhs46BZg/masa-sticla3-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/94z15Qpp/masa-sticla4-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/gxg4TZvj/masa-sticla5-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/H8094cYp/masa-sticla6-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/fSQv9jh2/masa-sticla7-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/5YC3yKDQ/masa-sticla8-jpg.jpg" alt="masa"></a>
+    <a href="#" onclick="openLightbox(this)"><img src="https://i.postimg.cc/LhjDM7zr/masa-sticla9-jpg.jpg" alt="masa"></a>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script>
+    function openLightbox(el) {
+      event.preventDefault();
+      document.getElementById("lightbox").style.display = "block";
+      document.getElementById("lightbox-img").src = el.querySelector("img").src;
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
 </body>
 </html>
